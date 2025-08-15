@@ -5,9 +5,9 @@ import (
 )
 
 func FindDevice(devices []BoundDevice, deviceId string) (*BoundDevice, error) {
-	for _, device := range devices {
-		if device.Id == deviceId {
-			return &device, nil
+	for i := range devices {
+		if devices[i].Id == deviceId {
+			return &devices[i], nil
 		}
 	}
 	return nil, errors.New("device not found in list")
